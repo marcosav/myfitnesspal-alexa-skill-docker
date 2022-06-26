@@ -4,8 +4,8 @@ services:
     restart: always
     image: marcosav/myfitnesspal-alexa-skill
     container_name: myfitnesspal-alexa-skill
-    ports:
-      - "8080:80"
+    export:
+      - "8080"
     env_file:
       - .env
   nginx-proxy:
