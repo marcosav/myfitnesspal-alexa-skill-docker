@@ -10,7 +10,7 @@ services:
       - .env
   nginx-proxy:
     image: nginxproxy/nginx-proxy:alpine
-    container_name: nginx-proxy
+    container_name: mfp-alexa-skill-nginx-proxy
     ports:
       - "80:80"
       - "443:443"
@@ -26,7 +26,7 @@ services:
       - servlet
   letsencrypt:
     restart: always
-    container_name: letsencrypt
+    container_name: mfp-alexa-skill-letsencrypt
     image: nginxproxy/acme-companion
     volumes_from:
       - nginx-proxy
